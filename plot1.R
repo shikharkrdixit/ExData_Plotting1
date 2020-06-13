@@ -1,0 +1,7 @@
+download.file("https://d396qusza40orc.cloudfront.net/exdata%2Fdata%2Fhousehold_power_consumption.zip",destfile = "./fpc.zip")
+read <- read.csv("./household_power_consumption.txt",sep=";",colClasses = c('Date','character','numeric','numeric','numeric','numeric','numeric','numeric','numeric'),na.strings = "?")
+png("plot1.png")
+read1 <- subset(read,Date>=as.Date("1/2/2007") & Date<=as.Date("2/2/2007"))
+hist(read1$Global_active_power,col="red",xlab="Global Active Power (kilowatts)",main="Global Active Power")
+dev.off()
+setwd("D:/R/Class/Exploratory Data Analysis/W1")
